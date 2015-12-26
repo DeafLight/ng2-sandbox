@@ -9,8 +9,25 @@
     "removeComments": false,
     "noImplicitAny": false
   },
+  "filesGlob": [
+    "./**/*.ts",
+    "!./node_modules/**/*.ts",
+    "!./typings/**/*.d.ts"
+  ],
   "exclude": [
     "node_modules",
     "typings"
-  ]
+  ],
+  "files": [
+    "./public/app/app.component.ts",
+    "./public/app/boot.ts",
+    "./public/app/hero-detail.component.ts",
+    "./public/app/hero.service.ts",
+    "./public/app/hero.ts",
+    "./public/app/mock-heroes.ts",
+    "./server.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
 }
