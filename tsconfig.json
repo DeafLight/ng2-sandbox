@@ -19,9 +19,12 @@
     "typings"
   ],
   "files": [
+    "./models/heroModel.ts",
     "./server.ts",
+    "./typings/custom/iHero.d.ts",
     "./typings/express/express.d.ts",
     "./typings/mime/mime.d.ts",
+    "./typings/mongoose/mongoose.d.ts",
     "./typings/node/node.d.ts",
     "./typings/serve-static/serve-static.d.ts"
   ],

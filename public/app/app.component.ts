@@ -1,5 +1,6 @@
+/// <reference path="../../typings/custom/iHero.d.ts" />
+
 import {Component} from 'angular2/core';
-import {Hero} from './hero';
 import {HeroDetailComponent} from './hero-detail.component';
 import {HeroService} from './hero.service';
 import {OnInit} from 'angular2/core';
@@ -13,7 +14,7 @@ import {OnInit} from 'angular2/core';
         <li *ngFor="#hero of heroes"
           [class.selected]="hero === selectedHero"
           (click)="onSelect(hero)">
-          <span class="badge">{{hero.id}}</span> {{hero.name}}
+          <span class="badge">{{hero.uid}}</span> {{hero.name}}
         </li>
       </ul>
       <my-hero-detail [hero]="selectedHero"></my-hero-detail>
@@ -39,8 +40,8 @@ import {OnInit} from 'angular2/core';
 })
 export class AppComponent implements OnInit {
   public title = 'Tour of Heroes';
-  public selectedHero: Hero;
-  public heroes: Hero[];
+  public selectedHero: IHero;
+  public heroes: IHero[];
 
   constructor(private _heroService: HeroService) { }
 
@@ -52,5 +53,5 @@ export class AppComponent implements OnInit {
     this.getHeroes();
   }
 
-  onSelect(hero: Hero) { this.selectedHero = hero; }
+  onSelect(hero: IHero) { this.selectedHero = hero; }
 }

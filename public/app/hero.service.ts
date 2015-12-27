@@ -1,16 +1,17 @@
+/// <reference path="../../typings/custom/iHero.d.ts" />
+
 import {HEROES} from './mock-heroes';
 import {Injectable} from 'angular2/core';
-import {Hero} from './hero';
 
 @Injectable()
 export class HeroService {
-  getHeroes(): Promise<Hero[]> {
-    return Promise.resolve(<Hero[]>HEROES);
+  getHeroes(): Promise<IHero[]> {
+    return Promise.resolve(<IHero[]>HEROES);
   }
 
-  getHeroesSlowly(): Promise<Hero[]> {
+  getHeroesSlowly(): Promise<IHero[]> {
     return new Promise(resolve =>
-      setTimeout(() => resolve(<Hero[]>HEROES), 2000) // 2 seconds
+      setTimeout(() => resolve(<IHero[]>HEROES), 2000) // 2 seconds
       );
   }
 }
