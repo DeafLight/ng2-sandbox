@@ -20,6 +20,7 @@
   ],
   "files": [
     "./models/heroModel.ts",
+    "./routes/heroes.ts",
     "./server.ts",
     "./typings/custom/iHero.d.ts",
     "./typings/express/express.d.ts",
