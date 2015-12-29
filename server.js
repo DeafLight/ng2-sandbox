@@ -4,10 +4,9 @@ var path = require('path');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var heroes_1 = require('./routes/heroes');
-mongoose.connect('mongodb://localhost/ng2-sandbox');
+var appConfig_1 = require('./appConfig');
+mongoose.connect(appConfig_1.appConfig.dbConnString);
 var app = express();
-var db = mongoose.connection;
-// view engine setup
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -18,8 +17,8 @@ router.use(function (req, res, next) {
 });
 heroes_1.routeHeroes(router);
 app.use('/api', router);
-var server = app.listen(3000, function () {
-    var host = 'localhost';
+var server = app.listen(appConfig_1.appConfig.port, appConfig_1.appConfig.hostName, function () {
+    var host = server.address().address;
     var port = server.address().port;
     console.log('App listening at http://%s:%s', host, port);
 });

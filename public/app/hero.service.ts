@@ -1,17 +1,27 @@
 /// <reference path="../../typings/custom/iHero.d.ts" />
 
-import {HEROES} from './mock-heroes';
 import {Injectable} from 'angular2/core';
+import {Http} from 'angular2/http';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class HeroService {
-  getHeroes(): Promise<IHero[]> {
-    return Promise.resolve(<IHero[]>HEROES);
-  }
+  constructor(public http: Http) { }
+  getHeroes(): Observable<IHero[]> {
+    return this.http.get('http://localhost:3000/api/hero').map(r => r.json())
+      .map((heroes: Array<any>) => {
+      let result: Array<IHero> = [];
 
-  getHeroesSlowly(): Promise<IHero[]> {
-    return new Promise(resolve =>
-      setTimeout(() => resolve(<IHero[]>HEROES), 2000) // 2 seconds
-      );
+      if (heroes) {
+        heroes.forEach((hero) => {
+          result.push({
+            uid: hero.uid,
+            name: hero.name
+          });
+        });
+      }
+
+      return result;
+    });
   }
 }

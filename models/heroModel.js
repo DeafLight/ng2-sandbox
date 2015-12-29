@@ -1,4 +1,3 @@
-/// <reference path="../typings/custom/iHero.d.ts" />
 "use strict";
 var mongoose = require('mongoose');
 var heroSchema = new mongoose.Schema({

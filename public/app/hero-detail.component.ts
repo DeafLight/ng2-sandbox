@@ -1,5 +1,3 @@
-/// <reference path="../../typings/custom/iHero.d.ts" />
-
 import {Component} from 'angular2/core';
 
 @Component({

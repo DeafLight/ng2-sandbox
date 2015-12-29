@@ -5,14 +5,12 @@ import * as mongoose from 'mongoose';
 import * as bodyParser from 'body-parser';
 import {HeroModel} from './models/heroModel';
 import {routeHeroes} from './routes/heroes';
+import {appConfig} from './appConfig';
 
-mongoose.connect('mongodb://localhost/ng2-sandbox');
+mongoose.connect(appConfig.dbConnString);
 
-var app: express.Express = express();
+var app = express();
 
-var db = mongoose.connection;
-
-// view engine setup
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -28,8 +26,8 @@ routeHeroes(router);
 
 app.use('/api', router);
 
-var server: http.Server = app.listen(3000, () => {
-  var host = 'localhost';
+var server = app.listen(appConfig.port, appConfig.hostName, () => {
+  var host = server.address().address;
   var port = server.address().port;
   console.log('App listening at http://%s:%s', host, port);
 });

@@ -19,10 +19,17 @@
     "typings"
   ],
   "files": [
+    "./appConfig.ts",
     "./models/heroModel.ts",
     "./routes/heroes.ts",
     "./server.ts",
+    "./typings/angular2/angular2-2.0.0-alpha.39.d.ts",
+    "./typings/angular2/angular2.d.ts",
+    "./typings/angular2/http-2.0.0-alpha.39.d.ts",
+    "./typings/body-parser/body-parser.d.ts",
+    "./typings/custom/iAppConfig.d.ts",
     "./typings/custom/iHero.d.ts",
+    "./typings/es6-shim/es6-shim.d.ts",
     "./typings/express/express.d.ts",
     "./typings/mime/mime.d.ts",
     "./typings/mongoose/mongoose.d.ts",

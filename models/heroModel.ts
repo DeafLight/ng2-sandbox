@@ -1,5 +1,3 @@
-/// <reference path="../typings/custom/iHero.d.ts" />
-
 import * as mongoose from 'mongoose';
 
 interface IHeroModel extends IHero, mongoose.Document { }

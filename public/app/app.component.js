@@ -1,4 +1,4 @@
-/// <reference path="../../typings/custom/iHero.d.ts" />
+/// <reference path= "../../typings/custom/iHero.d.ts" />
 System.register(['angular2/core', './hero-detail.component', './hero.service'], function(exports_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -31,7 +31,7 @@ System.register(['angular2/core', './hero-detail.component', './hero.service'], 
                 }
                 AppComponent.prototype.getHeroes = function () {
                     var _this = this;
-                    this._heroService.getHeroesSlowly().then(function (heroes) { return _this.heroes = heroes; });
+                    this._heroService.getHeroes().subscribe(function (heroes) { return _this.heroes = heroes; });
                 };
                 AppComponent.prototype.ngOnInit = function () {
                     this.getHeroes();

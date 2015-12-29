@@ -1,4 +1,3 @@
-/// <reference path="../../typings/custom/iHero.d.ts" />
 System.register(['angular2/core'], function(exports_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

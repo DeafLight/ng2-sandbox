@@ -1,6 +1,7 @@
+import * as express from 'express';
 import {HeroModel} from '../models/heroModel';
 
-export function routeHeroes(router) {
+export function routeHeroes(router: express.Router) {
 
   router.route('/hero').get((req, res) => {
     HeroModel.find((err, heroes) => {

@@ -1,4 +1,4 @@
-/// <reference path="../../typings/custom/iHero.d.ts" />
+/// <reference path= "../../typings/custom/iHero.d.ts" />
 
 import {Component} from 'angular2/core';
 import {HeroDetailComponent} from './hero-detail.component';
@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
   constructor(private _heroService: HeroService) { }
 
   getHeroes() {
-    this._heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
+    this._heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
   ngOnInit() {
