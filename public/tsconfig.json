@@ -22,8 +22,7 @@
     "./app/app.component.ts",
     "./app/boot.ts",
     "./app/hero-detail.component.ts",
-    "./app/hero.service.ts",
-    "./app/mock-heroes.ts"
+    "./app/hero.service.ts"
   ],
   "atom": {
     "rewriteTsconfig": true
